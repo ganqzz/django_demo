@@ -1,0 +1,42 @@
+{% extends "courses/layout.html" %}
+{% load course_extras %}
+
+{% block title %}{{ course.title }}{% endblock %}
+
+{% block breadcrumbs %}
+  <li><a href="{% url 'courses:list' %}">Courses</a></li>
+  <li>{{ course.title }}</li>
+{% endblock %}
+
+{% block content %}
+  <div class="">
+    {{ block.super }}
+    <article>
+      <h1 class="">{{ course.title }}</h1>
+
+      <div class="callout secondary mt-4">
+        {{ course.description|markdown_to_html }}
+      </div>
+
+      <dl class="mt-4">
+        {% for step in steps %}
+          <dt>
+            <a href="{{ step.get_absolute_url }}"><h3>{{ step.title }}</h3></a>
+          </dt>
+          <dd>{{ step.description|markdown_to_html }}</dd>
+          {% if step.question_set.all %}
+            <dt>Total Questions</dt>
+            <dd>{{ step.question_set.count }}</dd>
+          {% endif %}
+        {% endfor %}
+      </dl>
+
+      <p>Created on: {{ course.created_at|date:"F j, Y" }}</p>
+    </article>
+    {% if user.is_authenticated %}
+      <hr/>
+      <a href="{% url 'courses:create-quiz' course_pk=course.pk %}" class="btn btn-primary">New
+        Quiz</a>
+    {% endif %}
+  </div>
+{% endblock %}

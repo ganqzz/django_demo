@@ -1,0 +1,16 @@
+<div class="modal" id="modal-post-form">
+  <div class="modal-dialog">
+    <h2 class="modal-title">New post</h2>
+    <div class="modal-body">
+      <form method="POST" action="{% url 'posts:create' %}" id="postForm">
+        {% csrf_token %}
+        {{ form.as_p }}
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline" data-modal-close="modal-post-form">Never mind
+      </button>
+      <input type="submit" value="Post" form="postForm" class="btn btn-primary">
+    </div>
+  </div>
+</div>

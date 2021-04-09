@@ -1,0 +1,28 @@
+#preview {
+  border: 1px solid darkgray;
+  margin-left: 15%;
+  margin-right: 15%;
+  background-color: #f8f8f8;
+  min-height: 100px;
+  padding: .5em;
+}
+
+#preview h1, #preview h2, #preview h3, #preview h4,
+#preview h5, #preview h6, #preview p {
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+#preview p,
+#preview ol,
+#preview ul,
+#preview dl {
+  margin: 0;
+}
+
+#preview a {
+  color: deepskyblue;
+  text-decoration: underline;
+}

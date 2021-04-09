@@ -1,0 +1,11 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <title>{% block title %}{% endblock %}My Store</title>
+</head>
+<body>
+<h3><a href="{% url 'api-list-products' %}">Go to API Home</a></h3>
+<hr/>
+{% block content %}{% endblock %}
+</body>
+</html>

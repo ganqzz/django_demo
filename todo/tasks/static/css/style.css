@@ -1,0 +1,256 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: verdana, georgia, serif, sans-serif;
+}
+
+body {
+  background: #8FA9EA;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+
+p, ol, ul, dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+a, a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+
+.floating-button {
+  min-width: 100px;
+  text-align: center;
+  float: right;
+  margin: 20px 30px 0 0;
+  color: white;
+  border-radius: 3px;
+  border: 2px solid white;
+  padding: 10px 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.floating-button:hover {
+  color: white;
+}
+
+.card-wrapper {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 15vh;
+  padding: 20px;
+  min-height: 40vh;
+  width: 50vw;
+  min-width: 320px;
+  max-width: 450px;
+  background: white;
+  border-radius: 4px;
+}
+
+@media (max-width: 640px) {
+  .card-wrapper {
+    width: 90vw;
+  }
+}
+
+.card-wrapper > h1 {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.form-control {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  border: none;
+  box-shadow: none;
+  border-bottom: 2px solid #8FA9EA;
+  border-radius: 0;
+  margin-bottom: 25px;
+  padding: 6px;
+  line-height: 1.5;
+}
+
+.form-control:focus {
+  border-color: #F57173;
+  outline: initial;
+}
+
+.text-muted {
+  color: #5f5f5f;
+}
+
+.btn {
+  display: inline-block;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.btn-success {
+  transition: all 0.2s ease;
+  color: white;
+  background: #e1696b;
+  border-color: #e16b6d;
+}
+
+.btn-success:hover,
+.btn-success:active,
+.btn-success:active:focus,
+.btn-success:focus {
+  background: #ff7577;
+  border-color: #ff7476;
+}
+
+.btn-center {
+  text-align: center;
+  margin: 20px auto 0 auto;
+}
+
+.btn-fullwidth {
+  width: 100%;
+}
+
+.icon-blue {
+  color: #81b6ff;
+}
+
+.icon-red {
+  color: #F57173;
+}
+
+/* shadow */
+.levitate {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.levitate:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.raised {
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.22), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+/* tasks */
+.task__list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.task__item {
+  border-bottom: 1px solid #e8e8e8;
+  float: left;
+  width: 100%;
+  position: relative;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  padding-right: 2.5em;
+}
+
+.task__list ul li:last-of-type {
+  border-bottom: 0;
+}
+
+.task__item .title {
+  color: #81b6ff;
+  font-weight: bold;
+  margin: 5px 0 0;
+  text-decoration: none;
+}
+
+.task__item .title.complete {
+  color: #F57173;
+  text-decoration: line-through;
+}
+
+.task__item .description,
+.task__item .due {
+  font-weight: normal;
+  opacity: 0.8;
+  padding-top: 5px;
+}
+
+.task__item .due {
+  font-size: 0.8em;
+}
+
+.task__item button[type='submit'] {
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+}
+
+.task__item .bi-check-circle {
+  font-size: 2em;
+}
+
+.task__add {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: #F57173;
+  cursor: pointer;
+  font-size: 2rem;
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-50%);
+  transition: all 0.2s ease;
+}
+
+.task__add:hover {
+  color: white;
+}
+
+.task__delete {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: #e74c3c;
+  cursor: pointer;
+}
+
+.task__delete .bi-trash {
+  font-size: 2em;
+}

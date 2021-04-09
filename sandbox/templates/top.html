@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}Top{% endblock %}
+{% block content %}
+  <p><a href="{% url 'admin:index' %}">Admin Site</a></p>
+  <p><a href="{% url 'sbxapp:home' %}">Sandbox</a></p>
+  <p><a href="{% url 'pizza:home' %}">Pizza</a></p>
+  <p><a href="{% url 'teams:home' %}">Teams</a></p>
+  <p><a href="{% url 'forum:index' %}">Forum</a></p>
+{% endblock %}

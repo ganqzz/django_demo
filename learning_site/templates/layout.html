@@ -1,0 +1,59 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+  {% block css %}{% endblock %}
+</head>
+<body>
+<nav class="top-bar">
+  <section class="top-bar-left">
+    <ul class="menu">
+      <li class="menu-text"><a href="{% url 'home' %}">The Learning Site</a></li>
+      <li><a href="{% url 'courses:list' %}">Courses</a></li>
+      <li><a href="{% url 'api_top' %}">Review API</a></li>
+      <li><a href="{% url 'admin:index' %}">Admin</a></li>
+    </ul>
+  </section>
+  <section class="top-bar-right">
+    <form action="{% url 'courses:list' %}" method="GET">
+      <ul class="menu">
+        <li><label><input type="checkbox" name="published">Published</label></li>
+        <li><input type="search" name="q"></li>
+        <li>
+          <button type="submit" class="btn btn-outline">Search</button>
+        </li>
+      </ul>
+    </form>
+  </section>
+</nav>
+{% if messages %}
+  <div class="messages">
+    {% for message in messages %}
+      <div class="alert{% if message.tags %} alert-{{ message.tags }}{% endif %}">
+        {{ message|safe }}
+        <a href="#" class="close">&times;</a>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+<div class="container">
+  {% block content %}{% endblock %}
+</div>
+<footer>
+  <ul class="menu">
+    <li><a href="{% url 'courses:list' %}">Courses</a></li>
+    <li><a href="{% url 'api_top' %}">Review API</a></li>
+    <li><a href="{% url 'admin:index' %}">Admin</a></li>
+  </ul>
+  <div class="text-right">
+    &copy; 2020 The Learning Site
+  </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+{% block javascript %}{% endblock %}
+</body>
+</html>

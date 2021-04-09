@@ -1,0 +1,19 @@
+{% extends 'pizza/base.html' %}
+{% block content %}
+  <h1>Order a Pizza</h1>
+
+  {# novalidate : no client side validation #}
+  <form action="{% url 'pizza:order' %}" method="post" novalidate>
+    {% csrf_token %}
+    {{ pizzaform.as_p }}
+    <input type="submit" value="Order Pizza">
+  </form>
+
+  <hr>
+  <h2>Want more than one pizza?</h2>
+  <form action="{% url 'pizza:order-pizza' %}" method="get">
+    {% csrf_token %}{% comment %}この場合は、データ変更なしなのでtokenはなくてもよい{% endcomment %}
+    {{ multiple_form.as_p }}
+    <input type="submit" value="Get more Pizza">
+  </form>
+{% endblock %}

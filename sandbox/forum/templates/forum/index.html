@@ -1,0 +1,34 @@
+{% extends 'forum/base.html' %}
+
+{% block content %}
+  <div class="page-title">Thread Listing</div>
+
+  {% if user.is_authenticated %}
+    <div>
+      <a href="{% url 'forum:new_thread' %}" class="btn btn-primary" title="Add Thread">Add
+        Thread</a>
+    </div>
+  {% endif %}
+
+  <div class="panel panel-primary pad">
+    {% for thread in threads %}
+      <div class="panel-body">
+        <div class="panel-title">
+          <a href="{% url 'forum:thread' thread.id %}" class="blue">{{ thread.title }}</a>
+        </div>
+        <div class="small"><em>{{ thread.description }}</em></div>
+        <div class="small">
+          &ll;{{ thread.get_latest_date }}&gg; &nbsp;
+          <a href="{% url 'forum:thread' thread.id %}#_reply">Reply &nearr;</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  {% if user.is_authenticated %}
+    <div class="pad">
+      <a href="{% url 'forum:new_thread' %}" class="btn btn-primary" title="Add Thread">Add
+        Thread</a>
+    </div>
+  {% endif %}
+{% endblock %}

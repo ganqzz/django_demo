@@ -1,0 +1,29 @@
+{% extends "teams/base.html" %}
+
+{% block content %}
+  <div class="team">{{ team.name|capfirst }}</div>
+  <p>{{ team.practice_location }}</p>
+  <p>Coached by <strong>{{ team.coach.get_full_name|default:team.coach }}</strong></p>
+
+  <h2>Players ({{ team.players.count }})</h2>
+  <ul>
+    {% for player in team.players.all %}
+      <li>{{ player.name }} - {{ player.get_position_display }}</li>
+    {% endfor %}
+  </ul>
+
+  {% if user == team.coach %}
+    {% comment %}UpdateView、自動作成Formのデモ{% endcomment %}
+    <hr>
+    <form method='POST'>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" class="btn btn-primary" value="Save">
+    </form>
+  {% endif %}
+
+  {% if user.is_authenticated and user == team.coach %}
+    <hr>
+    <p><a href="{% url 'teams:update' pk=team.pk %}" class="btn btn-outline">Edit</a></p>
+  {% endif %}
+{% endblock %}

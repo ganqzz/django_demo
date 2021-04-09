@@ -1,0 +1,13 @@
+{% extends "teams/base.html" %}
+
+{% block content %}
+  <h1>Goal!</h1>
+  <p>This is the easiest way to keep track of your soccer team(s) and players!</p>
+  <p>
+    {% if not user.is_authenticated %}
+      <a href="{% url 'login' %}" class="btn btn-outline">Log in</a>
+    {% endif %}
+  </p>
+  <p>There {{ games_today|pluralize:'is,are' }} {{ games_today }} game{{ games_today|pluralize }}
+    today!</p>
+{% endblock %}

@@ -1,0 +1,5 @@
+{% if in_community %}
+  <a href="{% url 'communities:leave' slug=community.slug %}"><span class="text-danger">✖ Leave</span></a>
+{% else %}
+  <a href="{% url 'communities:join' slug=community.slug %}"><span class="text-warning">✔ Join</span></a>
+{% endif %}

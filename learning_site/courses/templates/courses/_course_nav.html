@@ -1,0 +1,4 @@
+{% for course in courses %}
+  {# course: values dict, not a Model #}
+  <div><a href="{% url 'courses:detail' pk=course.id %}">{{ course.title }}</a></div>
+{% endfor %}

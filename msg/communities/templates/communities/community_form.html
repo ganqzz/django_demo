@@ -1,0 +1,10 @@
+{% extends "communities/layout.html" %}
+
+{% block right_content %}
+  <h4>New community</h4>
+  <form method="POST" action="{% url 'communities:create' %}" id="communityForm">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Create" class="btn btn-primary">
+  </form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "posts/layout.html" %}
+
+{% block left_content %}
+  <div class="card card-with-shadow">
+    <h3>{{ post_user.get_short_name }}</h3>
+    <span>@{{ post_user.username }}</span>
+    {{ post_user.bio }}
+  </div>
+{% endblock %}
+
+{% block right_content %}
+  <div class="content">
+    {% for post in post_list %}
+      {% include "posts/_post.html" %}
+    {% endfor %}
+  </div>
+{% endblock %}

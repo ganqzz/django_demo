@@ -1,0 +1,44 @@
+{% extends 'forum/base.html' %}
+
+{% block content %}
+  <div class="page-title">{{ thread.title }}</div>
+
+  <div>
+    <a href="{% url 'forum:index' %}" class="btn btn-outline">&leftarrow; Back to Threads</a>
+  </div>
+
+  <div class="panel panel-primary pad">
+    <div class="panel-body">
+      <p class="big">Thread: {{ thread.title }}</p>
+      <div>{{ thread.description }}</div>
+      <br/>
+      {{ thread.date_created }} &nbsp;
+      <a href="#_reply">Post Reply</a>
+    </div>
+  </div>
+
+  <p>Replies &mdash; ({{ thread.reply_set.count }} total)</p>
+  {% for reply in thread.reply_set.all %}
+    <div class="panel panel-primary reply" id="r1" style="border-radius: 10px;">
+      <div class="panel-body">
+        <div class="reply-msg">{{ reply.message }}</div>
+        <div class="reply-details">{{ reply.date_created }} &nbsp;
+          <br/>
+          {{ reply.user.username }}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+
+  {% if user.is_authenticated %}
+    <div class="panel panel-primary pad">
+      <div class="panel-body" id="_reply">
+        <form action="" method="POST" role="form">
+          {% csrf_token %}
+          <div class="form-group">{{ form.message }}</div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}

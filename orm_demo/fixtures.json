@@ -1,0 +1,236 @@
+[
+  {
+    "model": "store.product",
+    "pk": 1,
+    "fields": {
+      "name": "Yoga mat",
+      "stock_count": 100,
+      "price": "25.00",
+      "description": " ",
+      "sku": " ",
+      "slug": "yoga-mat"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 2,
+    "fields": {
+      "name": "Backpack",
+      "stock_count": 25,
+      "price": "150.00",
+      "description": "",
+      "sku": "bp001",
+      "slug": "backpack"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 3,
+    "fields": {
+      "name": "Helmet",
+      "stock_count": 15,
+      "price": "32.00",
+      "description": "",
+      "sku": "hlmt003",
+      "slug": "helmet"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 4,
+    "fields": {
+      "name": "Kayak",
+      "stock_count": 3,
+      "price": "229.00",
+      "description": "",
+      "sku": "ky002",
+      "slug": "kayak"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 5,
+    "fields": {
+      "name": "High Boots",
+      "stock_count": 25,
+      "price": "75.00",
+      "description": "",
+      "sku": "hbts001",
+      "slug": "high-boots"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 6,
+    "fields": {
+      "name": "Low Boots",
+      "stock_count": 60,
+      "price": "70.00",
+      "description": "",
+      "sku": "lbts002",
+      "slug": "low-boots"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 7,
+    "fields": {
+      "name": "Medium Boots",
+      "stock_count": 55,
+      "price": "55.00",
+      "description": "",
+      "sku": "mtbs003",
+      "slug": "medium-boots"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 8,
+    "fields": {
+      "name": "Carabiner",
+      "stock_count": 300,
+      "price": "3.00",
+      "description": "",
+      "sku": "crb001",
+      "slug": "carabiner"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 9,
+    "fields": {
+      "name": "Climbing kit",
+      "stock_count": 30,
+      "price": "25.00",
+      "description": "",
+      "sku": "clk001",
+      "slug": "climbing-kit"
+    }
+  },
+  {
+    "model": "store.productimage",
+    "pk": 1,
+    "fields": {
+      "image": "single_backpack.jpg",
+      "product": 2
+    }
+  },
+  {
+    "model": "store.productimage",
+    "pk": 2,
+    "fields": {
+      "image": "single_helmet.jpg",
+      "product": 3
+    }
+  },
+  {
+    "model": "store.productimage",
+    "pk": 3,
+    "fields": {
+      "image": "blue.jpg",
+      "product": 4
+    }
+  },
+  {
+    "model": "store.productimage",
+    "pk": 4,
+    "fields": {
+      "image": "high_boots.jpg",
+      "product": 5
+    }
+  },
+  {
+    "model": "store.productimage",
+    "pk": 5,
+    "fields": {
+      "image": "low_boots.jpg",
+      "product": 6
+    }
+  },
+  {
+    "model": "store.productimage",
+    "pk": 6,
+    "fields": {
+      "image": "medium_boots.jpg",
+      "product": 7
+    }
+  },
+  {
+    "model": "store.productimage",
+    "pk": 7,
+    "fields": {
+      "image": "single_boot.jpg",
+      "product": 7
+    }
+  },
+  {
+    "model": "store.productimage",
+    "pk": 8,
+    "fields": {
+      "image": "carabiner.jpg",
+      "product": 8
+    }
+  },
+  {
+    "model": "store.productimage",
+    "pk": 9,
+    "fields": {
+      "image": "misc_2.jpg",
+      "product": 9
+    }
+  },
+  {
+    "model": "store.productimage",
+    "pk": 10,
+    "fields": {
+      "image": "green.jpg",
+      "product": 4
+    }
+  },
+  {
+    "model": "store.category",
+    "pk": 1,
+    "fields": {
+      "name": "Climbing gear",
+      "products": [
+        3,
+        5,
+        2
+      ]
+    }
+  },
+  {
+    "model": "store.category",
+    "pk": 2,
+    "fields": {
+      "name": "Safety gear",
+      "products": [
+        8,
+        9,
+        3
+      ]
+    }
+  },
+  {
+    "model": "store.category",
+    "pk": 3,
+    "fields": {
+      "name": "Footwear",
+      "products": [
+        7,
+        6,
+        5
+      ]
+    }
+  },
+  {
+    "model": "store.category",
+    "pk": 4,
+    "fields": {
+      "name": "Bags",
+      "products": [
+        2
+      ]
+    }
+  }
+]

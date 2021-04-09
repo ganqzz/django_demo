@@ -1,0 +1,21 @@
+{% extends "teams/base.html" %}
+{% load team_tags %}
+
+{% block content %}
+  <h2>Dashboard</h2>
+  <div class="placeholders">
+    {% for team in teams %}
+      {% team_avatar team %}
+    {% endfor %}
+  </div>
+
+  {% if user.is_authenticated %}
+    {% comment %}CreateView、自動作成Formのデモ{% endcomment %}
+    <hr>
+    <form method='POST'>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" class="btn btn-primary" value="Save">
+    </form>
+  {% endif %}
+{% endblock %}

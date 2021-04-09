@@ -1,0 +1,6 @@
+<div class="placeholder">
+  <a href="{% url 'teams:detail' team.pk %}">
+    <div class="team">{{ team.name|capfirst }}</div>
+    <span>{{ team.players.count }} player{{ team.players.count|pluralize }}</span>
+  </a>
+</div>

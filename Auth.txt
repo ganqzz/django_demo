@@ -1,0 +1,13 @@
+- Django's Password handling
+    * Password formatting: algorithm$iterations$salt$hash
+    * Algorithm: Used to record which hashing algorithm is used
+    * Iterations: How many times the hashing algorithm is used
+    * Upgrading: Automatically re-generates password hashing when Django is updated
+
+- Groups and Permissions
+
+- Extend User Model
+
+- Custom User Model
+
+- Custom Auth Backend

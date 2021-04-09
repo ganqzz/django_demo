@@ -1,0 +1,34 @@
+{% extends "communities/layout.html" %}
+
+{% block left_content %}
+  <div class="card card-with-shadow">
+    <h3 class="title">Communities</h3>
+    <p>MSG communities are a great place to find other people that share your passions! Make
+      friends, learn tips &amp; tricks, and more!</p>
+  </div>
+{% endblock %}
+
+{% block right_content %}
+  <div class="content">
+    {% for community in object_list %}
+      <a href="{% url 'communities:single' slug=community.slug %}" class="title">
+        <h3>{{ community.name }}</h3>
+      </a>
+      <div class="hpad">
+        <div class="markdown">
+          {{ community.description_html|safe }}
+        </div>
+        <div class="row">
+          <div class="col">
+            <span class="badge">{{ community.members.count }}</span>
+            member{{ community.members.count|pluralize }}
+          </div>
+          <div class="col">
+            <span class="badge">{{ community.posts.count }}</span>
+            post{{ community.posts.count|pluralize }}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

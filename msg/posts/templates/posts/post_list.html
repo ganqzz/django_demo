@@ -1,0 +1,42 @@
+{% extends "posts/layout.html" %}
+{% load community_tags %}
+
+{% block left_content %}
+  {% if user.is_authenticated %}
+    <div class="card card-with-shadow">
+      <h3 class="title">Your Communities</h3>
+      <ul class="list-unstyled">
+        {% get_user_communities as user_communities %}
+        {% for member_community in user_communities %}
+          <li class="li-with-bullet">
+            <a href="{% url 'communities:single' slug=member_community.community.slug %}">{{
+                member_community.community.name }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+  <div class="card card-with-shadow">
+    <h3 class="title">All Communities</h3>
+    <ul class="list-unstyled">
+      {% get_other_communities as other_communities %}
+      {% for other_community in other_communities %}
+        <li class="li-with-bullet">
+          <a href="{% url 'communities:single' slug=other_community.slug %}">{{ other_community.name
+              }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+    {% if user.is_authenticated %}
+      <a href="{% url 'communities:create' %}" class="btn btn-primary">✚ New community</a>
+    {% endif %}
+  </div>
+{% endblock %}
+
+{% block right_content %}
+  <div class="content">
+    {% for post in post_list %}
+      {% include "posts/_post.html" %}
+    {% endfor %}
+  </div>
+{% endblock %}

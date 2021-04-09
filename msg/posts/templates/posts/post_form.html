@@ -1,0 +1,10 @@
+{% extends "posts/layout.html" %}
+
+{% block right_content %}
+  <h4>New post</h4>
+  <form method="POST" action="{% url 'posts:create' %}" id="postForm">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Post" class="btn btn-primary">
+  </form>
+{% endblock %}

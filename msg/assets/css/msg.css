@@ -1,0 +1,440 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f6f6f6;
+  font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+  font-size: 15px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+
+p, ol, ul, dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input {
+  padding: 0.5rem;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+  height: auto;
+  padding: 0.5rem;
+  max-width: 100%;
+  overflow: auto;
+  resize: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+.bold {
+  font-weight: bolder !important;
+}
+
+.big {
+  font-size: larger;
+}
+
+.small {
+  font-size: small;
+}
+
+.navbar {
+  margin-top: 0;
+  padding: 0 20px;
+  width: 100%;
+  background-color: coral;
+  color: #fff;
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.navbar a {
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 200ms ease-in-out;
+}
+
+.navbar .navbar-brand {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .navbar-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-menu-item {
+  display: flex;
+}
+
+.navbar-menu-item + .navbar-menu-item {
+}
+
+.navbar-menu-item > a {
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-menu-item > a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.navbar .logo {
+  padding: 10px 0 0;
+  float: left;
+}
+
+.navbar .brand {
+  font-size: 24px;
+  color: #FFFFFF;
+  line-height: 64px;
+  margin-left: 10px;
+  float: left;
+}
+
+.navbar .logo img {
+  width: 48px;
+  height: 48px;
+}
+
+.wrapper {
+  padding-top: 64px;
+}
+
+.landing-header {
+  font-size: larger;
+  background-color: coral;
+  min-height: 250px;
+}
+
+.landing-header .motto {
+  color: #FFFFFF;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.landing-header .motto h3 {
+  margin-bottom: 0;
+}
+
+.landing-header .motto a {
+  margin-bottom: 0;
+  font-size: 1.2em;
+}
+
+.landing-section,
+.main {
+  margin: 0 auto;
+  padding: 20px 20px 0;
+}
+
+.main {
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.row > div.col {
+  flex: 1 1 0;
+}
+
+.landing-section .row > div.col {
+  padding: 20px;
+}
+
+.row > div.col-left {
+  flex: 1 1 33%;
+}
+
+.row > div.col-right {
+  flex: 1 1 67%;
+}
+
+.footer {
+  line-height: 20px;
+  bottom: 0;
+  width: 100%;
+  height: 3rem;
+  overflow: hidden;
+}
+
+.footer .copyright {
+  color: #777777;
+  padding: 5px 15px;
+  margin: 15px 3px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.footer .heart {
+  font-size: x-large;
+  color: #eb442a;
+}
+
+.hpad {
+  padding: 0 15px;
+}
+
+.content {
+  padding: 10px 15px;
+}
+
+.content a.title {
+  color: dodgerblue;
+  text-decoration: none;
+}
+
+.content a.title:hover {
+  text-decoration: underline;
+}
+
+.post {
+  border-bottom: 1px solid #ddd;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+
+.post:last-child {
+  border-bottom: 0;
+}
+
+.post .avatar {
+  height: 64px;
+  margin-right: 15px;
+  width: 64px;
+}
+
+.post .media-heading {
+  display: inline-block;
+  font-size: 1em;
+}
+
+.post .media-heading .time {
+  color: #999;
+  font-size: 0.9em;
+}
+
+.post .media-heading .username {
+  color: rgb(255, 143, 94);
+}
+
+.post .media-heading a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.card {
+  margin: 10px 10px 20px;
+  padding: 10px 20px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.card-with-shadow {
+  box-shadow: rgba(165, 165, 165, 0.57) 0 20px 16px -15px;
+}
+
+.card .title {
+  margin: 5px 0 10px;
+  color: #000;
+}
+
+.list-unstyled {
+  padding-left: 1rem;
+}
+
+.list-unstyled a {
+  color: dodgerblue;
+  text-decoration: none;
+}
+
+.list-unstyled a:hover {
+  text-decoration: underline;
+}
+
+.li-with-bullet {
+  display: inline-block;
+}
+
+.li-with-bullet::before {
+  content: '• ';
+}
+
+.li-with-bullet:first-child::before {
+  content: '';
+}
+
+.btn {
+  display: inline-block;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  text-decoration: none;
+  transition: background-color 200ms ease-in-out;
+}
+
+.btn.btn-primary {
+  background-color: #8f71ff;
+  border: 1px solid #866ec7;
+  color: #fff;
+}
+
+.btn.btn-primary:hover {
+  background-color: #6b56bf;
+}
+
+.btn.btn-outline {
+  background-color: #fff;
+  border: 1px solid #8f71ff;
+  color: #8f71ff;
+}
+
+.btn.btn-outline:hover {
+  background-color: #8f71ff;
+  color: #fff;
+  transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+}
+
+.badge {
+  display: inline-block;
+  padding: .25em .6em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 10rem;
+  color: #fff;
+  background-color: dimgrey;
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+  opacity: 0;
+  position: fixed;
+  top: 64px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 200ms linear;
+}
+
+.modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-dialog {
+  background-color: #fff;
+  border-radius: 6px;
+  max-width: 60%;
+  min-width: 300px;
+  max-height: 90vh;
+  padding: 1.5rem;
+  transform: translateY(-100px);
+  transition: transform 200ms ease-in-out;
+}
+
+.modal.show .modal-dialog {
+  transform: translateY(0);
+}
+
+.modal-title {
+  border-bottom: 1px solid #dedede;
+  font-size: 1.25rem;
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 0.5rem;
+}
+
+.modal-footer {
+  margin-top: 1.5rem;
+  text-align: right;
+}
+
+.markdown a {
+  color: dodgerblue;
+  text-decoration: underline;
+}
+
+.text-danger {
+  color: darkred;
+}
+
+.text-warning {
+  color: gold;
+}
+
+.alert {
+  padding: 1rem 2rem;
+  background-color: rgba(0, 255, 0, .5);
+}
+
+.alert.alert-warning {
+  background-color: rgba(255, 255, 0, .5);
+}
+
+.alert.alert-error {
+  background-color: rgba(255, 0, 0, .5);
+}

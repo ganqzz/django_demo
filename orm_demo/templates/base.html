@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}{% endblock %} | Carved Rock Fitness</title>
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">
+    <a href="{% url 'index' %}">Carved Rock Fitness</a>
+  </div>
+  <ul class="navbar-menu">
+    <li class="navbar-menu-item"><a href="{% url 'store:category' 'Footwear' %}">Footwear</a></li>
+    <li class="navbar-menu-item"><a href="{% url 'store:category' 'Climbing gear' %}">Climbing
+      Gear</a></li>
+    <li class="navbar-menu-item"><a href="{% url 'store:category' 'Safety gear' %}">Safety</a></li>
+    <li class="navbar-menu-item"><a href="{% url 'store:category' 'Bags' %}">Bags&Backpacks</a></li>
+  </ul>
+</nav>
+<form class="search-form container mb-4" method="get" action="{% url 'store:filter' %}">
+  <input class="form-control" placeholder="What can we help you find?" type="search" name="name">
+  <button class="btn btn-primary" type="submit">SEARCH</button>
+</form>
+
+{% block content %}
+  {# Content goes here #}
+{% endblock %}
+</body>
+</html>

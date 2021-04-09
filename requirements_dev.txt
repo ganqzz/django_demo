@@ -1,0 +1,8 @@
+-r requirements_base.txt
+pipdeptree
+coverage
+django-debug-toolbar
+#django-extensions
+factory-boy
+Faker
+selenium

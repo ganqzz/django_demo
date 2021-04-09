@@ -1,0 +1,25 @@
+/*---*/
+
+.navbar {
+  background-color: #248745;
+}
+
+.pizza {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.pizza > form,
+.pizza > a {
+  display: inline-block;
+}
+
+.pizza > a {
+  margin-right: 1rem;
+  color: tomato;
+}
+
+.pizza > a:hover {
+  text-decoration: underline;
+}

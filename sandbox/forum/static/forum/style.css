@@ -1,0 +1,98 @@
+body {
+  background-color: rgba(29, 132, 99, 0.8);
+  font-family: verdana, georgia, serif, sans-serif;
+  font-size: 15px;
+}
+
+div.container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: white;
+  box-shadow: 3px 5px 5px rgba(255, 255, 255, .5);
+  border-radius: 10px;
+}
+
+.blue {
+  color: blue !important;
+}
+
+div.logo {
+  margin: 0 20px 10px;
+  font-size: 30px;
+  font-weight: bolder;
+  padding: 10px;
+  border-bottom: 1px solid rgba(51, 122, 183, .2);
+  background-color: rgb(51, 183, 112);
+  box-shadow: 3px 5px 5px rgba(51, 183, 112, .5);
+  border-radius: 10px;
+  text-align: center;
+}
+
+div.logo a {
+  color: white;
+}
+
+div.page-title {
+  font-size: 30px;
+  font-weight: bolder;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.panel {
+  border-radius: 0;
+}
+
+footer {
+  margin-top: 20px;
+}
+
+.pad {
+  margin-top: 10px;
+}
+
+.panel-body {
+  padding: 10px;
+}
+
+.panel-primary {
+  border-color: rgba(51, 183, 112, .5);
+  box-shadow: 2px 2px 2px rgba(51, 183, 112, .2);
+}
+
+.panel-primary > .panel-heading {
+  border-radius: 0;
+  background-color: rgb(51, 183, 112);
+}
+
+.panel-title {
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.reply-msg {
+  padding-top: 10px;
+  padding-bottom: 4px;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.reply-details {
+  border-left: 1px groove rgba(51, 122, 183, .2);
+  padding-left: 10px;
+}
+
+.m-item:first-of-type {
+  padding-left: 0;
+}
+
+.m-item {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+div.menu {
+  text-align: center;
+  margin-bottom: 15px;
+}
