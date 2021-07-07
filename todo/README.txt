@@ -1,4 +1,5 @@
-# Testing Django
+Testing Django
+===
 
 - Django TestCase classes
 - Unit test / Integration test
@@ -7,15 +8,10 @@
     * default LoginView, LogoutView
 
 
-## changes from the original
+## Libraries
 
-- Python: 2.x -> 3.x
-- Django: 1.x -> 3.x
-- django-autofixture -> factory-boy, Faker
-- Bootstrap削除
-- Bootstrap icons
-- django-widget-tweaks -> django-crispy-forms
-- clean up: forms, views, templates
+- factory-boy, Faker
+- django-crispy-forms
 
 
 ## Further more

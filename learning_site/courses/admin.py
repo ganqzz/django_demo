@@ -20,19 +20,17 @@ def make_in_review(modeladmin, request, queryset):
 make_in_review.short_description = "Mark selected courses as In Review"
 
 
+@admin.action(description="Mark selected courses as In Progress")  # from 3.2
 def make_in_progress(modeladmin, request, queryset):
     queryset.update(status='i', published=False)
 
 
-make_in_progress.short_description = "Mark selected courses as In Progress"
-
-admin.site.disable_action('delete_selected')  # globally disabled
+admin.site.disable_action('delete_selected')  # globally(site-level) disabled
 
 
 # Inline Form
 class TextInline(admin.StackedInline):
     model = models.Text
-
     fieldsets = (
         (None, {'fields': (('title', 'order'), 'description', 'content')}),
     )
@@ -81,7 +79,7 @@ class TopicListFilter(admin.SimpleListFilter):
             return queryset.filter(title__contains=self.value())
 
 
-@admin.register(models.Course)
+@admin.register(models.Course)  # register by decorator
 class CourseAdmin(admin.ModelAdmin):
     # inlines = [TextInline, QuizInline, ]
     search_fields = ['title', 'description']
@@ -90,13 +88,30 @@ class CourseAdmin(admin.ModelAdmin):
         'title',
         'created_at',
         'published',
-        'time_to_complete',  # from Course model
+        'time_to_complete',  # the model's method
         'status',
     ]
     # list_editable = ['status']
+
+    # sortable
+    sortable_by = ('title', 'created_at',)
+    ordering = ('created_at',)
+
+    # actions
     actions = [make_published, make_in_review, make_in_progress]
 
-    # Markdown preview
+    # display actions
+    actions_on_top = True
+    actions_on_bottom = True
+
+    # customize edit page
+    fields = (
+        'title', 'subject', 'description', 'teacher',
+        ('status', 'published',), 'created_at',  # tuple: one line
+    )
+    readonly_fields = ('created_at',)
+
+    # for Markdown preview
     class Media:
         css = {'all': ('css/preview.css',)}
         js = ('js/vendor/marked.min.js', 'js/preview.js')
@@ -125,7 +140,10 @@ class TextAdmin(admin.ModelAdmin):
         (None, {'fields': ('course', 'title', 'order', 'description')}),
         ('Add content', {'fields': ('content',), 'classes': ('collapse',)}),
     )
-    # radio_fields = {"course": admin.VERTICAL}  # customizing for demo
+    # radio_fields = {'course': admin.VERTICAL}  # customizing for demo
+
+    # save button
+    save_on_top = True
 
 
 # admin.site.register(models.Course, CourseAdmin)
@@ -134,3 +152,6 @@ admin.site.register(models.Quiz, QuizAdmin)
 admin.site.register(models.MultipleChoiceQuestion, QuestionAdmin)
 admin.site.register(models.TrueFalseQuestion, QuestionAdmin)
 admin.site.register(models.Answer)
+
+admin.site.site_title = 'Learning Site Administration'
+admin.site.site_header = 'Learning Site Administration'

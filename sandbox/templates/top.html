@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}Top{% endblock %}
 {% block content %}
+  <h3>Django version: {{ version }}</h3>
   <p><a href="{% url 'admin:index' %}">Admin Site</a></p>
   <p><a href="{% url 'sbxapp:home' %}">Sandbox</a></p>
   <p><a href="{% url 'pizza:home' %}">Pizza</a></p>

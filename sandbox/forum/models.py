@@ -13,6 +13,9 @@ class Thread(models.Model):
 
         return self.date_created
 
+    def __str__(self):
+        return f'{self.title}'
+
 
 class Reply(models.Model):
     thread = models.ForeignKey(Thread, on_delete=models.CASCADE)

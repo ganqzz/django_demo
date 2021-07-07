@@ -30,13 +30,12 @@
     </article>
     {% if user.is_authenticated %}
       <hr>
-      <a href="{% url 'courses:edit-quiz' course_pk=step.course.pk quiz_pk=step.pk %}" class="btn btn-primary">Edit</a>
-      <a href="{% url 'courses:create-question' quiz_pk=step.pk question_type=" mc" %}" class="btn
-  btn-primary">New
-        Multiple Choice</a>
-      <a href="{% url 'courses:create-question' quiz_pk=step.pk question_type=" tf" %}" class="btn
-  btn-primary">New
-        True/False</a>
+      <a href="{% url 'courses:edit-quiz' course_pk=step.course.pk quiz_pk=step.pk %}"
+         class="btn btn-primary">Edit</a>
+      <a href="{% url 'courses:create-question' quiz_pk=step.pk question_type='mc' %}"
+         class="btn btn-primary">New Multiple Choice</a>
+      <a href="{% url 'courses:create-question' quiz_pk=step.pk question_type='tf' %}"
+         class="btn btn-primary">New True/False</a>
     {% endif %}
   </div>
 {% endblock %}

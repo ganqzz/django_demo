@@ -2,8 +2,8 @@
 {% block title %}{{ product.name }}{% endblock %}
 {% block content %}
   <h2>{{ product.name }}</h2>
-  <img width="600" style="object-fit: contain;" src="
-      {{ MEDIA_URL }}{{ product.photo }}" alt="{{ product.photo }}"/>
+  <img width="600" style="object-fit: contain;"
+       src="{{ MEDIA_URL }}{{ product.photo }}" alt="{{ product.photo }}"/>
   <div>Total orders: {{ total_orders }}</div>
   <p>{{ product.description }}</p>
   {% if product.is_on_sale %}

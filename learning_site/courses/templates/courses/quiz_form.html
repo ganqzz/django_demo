@@ -12,7 +12,7 @@
 {% block content %}
   <div class="">
     {{ block.super }}
-    <h1>{{ form.instance.title|default:"Make a new quiz" }}</h1>
+    <h1 class="mb-4">{{ form.instance.title|default:"Make a new quiz" }}</h1>
     <form method="POST" action="">
       {% csrf_token %}
       {{ form.as_p }}

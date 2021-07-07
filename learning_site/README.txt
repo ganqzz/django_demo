@@ -25,6 +25,13 @@
     - marked.js
 
 
+## Libraries
+
+- Django REST Framework
+- Markdown
+- marked.js
+
+
 ## Django REST Framework
 
 - TokenAuthentication
@@ -39,19 +46,6 @@ or
 ```
 python manage.py drf_create_token <user>
 ```
-
-
-## changes from the original
-
-- Python: 2.x -> 3.x
-- Django: 1.x -> 3.x
-    REST Frameworkに関してもアップデート対応。
-- markdown2 -> Markdown
-- Foundation削除
-- markdown.js -> marked.js
-- courses:searchをcourses:listへ統合
-- CourseSerializerに、HyperlinkedIdentityField（自分）を追加。
-    HyperlinkedModelSerializerがやっていることと同じ。
 
 
 ## User情報

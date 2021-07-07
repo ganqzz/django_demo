@@ -35,6 +35,9 @@ class Product(models.Model):
     def __repr__(self):
         return '<Product object ({}) "{}">'.format(self.id, self.name)
 
+    def __str__(self):
+        return f'{self.name}'
+
 
 class Order(models.Model):
     product = models.ForeignKey(Product,
@@ -48,3 +51,6 @@ class Order(models.Model):
     def __repr__(self):
         return '<Order object ({}) {}x "{}">'.format(
             self.id, self.quantity, self.product.name)
+
+    def __str__(self):
+        return f'{self.product} ({self.quantity})'

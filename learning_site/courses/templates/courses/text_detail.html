@@ -13,7 +13,7 @@
   <div class="">
     <article>
       {{ block.super }}
-      <h1>{{ step.title }}</h1>
+      <h1 class="mb-4">{{ step.title }}</h1>
       {{ step.description|linebreaks }}
       {{ step.content|markdown_to_html }}
       {# {% with con=step.content %}#}

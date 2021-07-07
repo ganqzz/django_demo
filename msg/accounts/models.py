@@ -59,7 +59,3 @@ class User(AbstractBaseUser, PermissionsMixin):  # 順番注意（AbstractUser�
 
     def get_long_name(self):
         return "{} (@{})".format(self.display_name, self.username)
-
-    def get_full_name(self):
-        full_name = '{} {}'.format(self.first_name, self.last_name)
-        return full_name.strip()

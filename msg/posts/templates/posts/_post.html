@@ -11,8 +11,7 @@
     <div class="media-heading">
       <span class="username"><a href="{% url 'posts:for_user' username=post.user.username %}">@{{ post.user.username }}</a></span>
       <time class="time">
-        <a href="{% url 'posts:single' username=post.user.username pk=post.pk %}">{{
-            post.created_at|naturaltime }}</a>
+        <a href="{% url 'posts:single' username=post.user.username pk=post.pk %}">{{ post.created_at|naturaltime }}</a>
       </time>
       {% if post.community %}
         <span class="community-name">in <a href="{% url 'communities:single' slug=post.community.slug %}">{{ post.community.name }}</a></span>

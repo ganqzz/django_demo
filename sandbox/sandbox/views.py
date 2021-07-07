@@ -1,5 +1,6 @@
+import django
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.views.decorators.cache import cache_page
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import View
@@ -7,7 +8,7 @@ from django.views.generic import View
 
 @cache_page(86400)
 def top(request):
-    return render(request, 'top.html')
+    return render(request, 'top.html', {'version': django.__version__})
 
 
 def trailing_slash(request):

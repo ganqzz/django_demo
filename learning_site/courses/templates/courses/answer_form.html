@@ -7,12 +7,10 @@
 {% block breadcrumbs %}
   <li><a href="{% url 'courses:list' %}">Courses</a></li>
   <li>
-    <a href="{% url 'courses:detail' pk=question.quiz.course.pk %}">{{ question.quiz.course.title
-        }}</a>
+    <a href="{% url 'courses:detail' pk=question.quiz.course.pk %}">{{ question.quiz.course.title }}</a>
   </li>
   <li>
-    <a href="{% url 'courses:quiz' course_pk=question.quiz.course.pk step_pk=question.quiz.pk %}">{{
-        question.quiz.title }}</a>
+    <a href="{% url 'courses:quiz' course_pk=question.quiz.course.pk step_pk=question.quiz.pk %}">{{ question.quiz.title }}</a>
   </li>
   <li>{{ question.prompt }}</li>
 {% endblock %}

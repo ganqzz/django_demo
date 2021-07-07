@@ -12,7 +12,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f6f6f6;
-  font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 15px;
 }
 
@@ -71,7 +71,7 @@ textarea {
 }
 
 .bold {
-  font-weight: bolder !important;
+  font-weight: bold !important;
 }
 
 .big {
@@ -356,7 +356,7 @@ textarea {
   display: inline-block;
   padding: .25em .6em;
   font-size: 75%;
-  font-weight: 700;
+  font-weight: bold;
   line-height: 1;
   text-align: center;
   white-space: nowrap;

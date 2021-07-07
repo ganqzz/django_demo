@@ -29,7 +29,7 @@ class SuggestionForm(forms.Form):
         if email != verify_email:
             raise forms.ValidationError("You need to enter the same email in both fields")
 
-    # customs: clean_<field>()
+    # individual field validation: clean_<field>()
     # def clean_honeypot(self):
     #     honeypot = self.cleaned_data['honeypot']
     #     if len(honeypot):
