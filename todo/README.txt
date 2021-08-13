@@ -12,6 +12,7 @@ Testing Django
 
 - factory-boy, Faker
 - django-crispy-forms
+- Bootstrap Icons
 
 
 ## Further more
